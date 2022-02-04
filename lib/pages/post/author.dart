@@ -8,24 +8,23 @@ List<Widget> authorSection(
   return [
     divider,
     Container(
-      padding: EdgeInsets.symmetric(vertical: 40),
+      padding: const EdgeInsets.symmetric(vertical: 40),
       child: Row(
         children: <Widget>[
-          if (imageUrl != null)
-            Container(
-              margin: EdgeInsets.only(right: 25),
-              child: Material(
-                shape: CircleBorder(),
-                clipBehavior: Clip.hardEdge,
-                color: Colors.transparent,
-                child: Image.asset(
-                  imageUrl,
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.contain,
-                ),
+          Container(
+            margin: const EdgeInsets.only(right: 25),
+            child: Material(
+              shape: const CircleBorder(),
+              clipBehavior: Clip.hardEdge,
+              color: Colors.transparent,
+              child: Image.asset(
+                imageUrl,
+                width: 100,
+                height: 100,
+                fit: BoxFit.contain,
               ),
             ),
+          ),
           Expanded(
             child: Column(
               children: <Widget>[

@@ -20,7 +20,7 @@ class ReadMoreButton extends StatelessWidget {
           highlightedBorderColor: textPrimary,
           hoverColor: textPrimary,
           borderSide: BorderSide(color: textPrimary, width: 2),
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             "READ MORE",
             style: GoogleFonts.montserrat(

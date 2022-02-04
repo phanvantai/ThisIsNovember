@@ -7,10 +7,9 @@ class ImageWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO Listen to inherited widget width updates.
     double width = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 24),
+      margin: const EdgeInsets.symmetric(vertical: 24),
       child: Image.asset(
         image,
         width: width,

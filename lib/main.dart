@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:this_is_november_blog/models/page.dart';
 import 'package:this_is_november_blog/pages/home/home.dart';
 import 'package:this_is_november_blog/pages/post/post_view.dart';
 import 'package:this_is_november_blog/routing/routes.dart';
@@ -32,9 +33,9 @@ class MyApp extends StatelessWidget {
         return Routes.fadeThrough(settings, (context) {
           switch (settings.name) {
             case Routes.home:
-              return const HomePage();
+              return HomePage(PageModel(0, PageModel.sample));
             case Routes.post:
-              return PostView();
+              return PostView(PageModel.sample.last);
             case Routes.style:
               return const SizedBox.shrink(); //TypographyPage();
             default:

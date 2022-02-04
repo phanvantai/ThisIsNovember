@@ -1,45 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:this_is_november_blog/constants/spacing.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
+import 'package:this_is_november_blog/models/post.dart';
 import 'package:this_is_november_blog/routing/routes.dart';
 import 'package:this_is_november_blog/widgets/image_wrapper.dart';
 import 'package:this_is_november_blog/widgets/read_more_button.dart';
 
 class PostItemView extends StatelessWidget {
-  // TODO replace with Post item model.
-  final String title;
-  final String? imageUrl;
-  final String? description;
+  final PostModel model;
 
-  const PostItemView(
-      {Key? key, required this.title, this.imageUrl, this.description})
-      : super(key: key);
+  const PostItemView(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        if (imageUrl != null)
+        if (model.image != null)
           ImageWrapper(
-            image: imageUrl!,
+            image: model.image!,
           ),
         Align(
           alignment: Alignment.centerLeft,
           child: Container(
             margin: marginBottom12,
             child: Text(
-              title,
+              model.title,
               style: headlineTextStyle,
             ),
           ),
         ),
-        if (description != null)
+        if (model.description != null)
           Align(
             alignment: Alignment.centerLeft,
             child: Container(
               margin: marginBottom12,
               child: Text(
-                description!,
+                model.description!,
                 style: bodyTextStyle,
               ),
             ),

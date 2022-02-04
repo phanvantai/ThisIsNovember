@@ -3,7 +3,7 @@ import 'package:this_is_november_blog/helpers/utils.dart';
 import 'package:this_is_november_blog/widgets/text.dart';
 
 class Footer extends StatelessWidget {
-  // TODO Add additional footer components (i.e. about, links, logos).
+  const Footer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
