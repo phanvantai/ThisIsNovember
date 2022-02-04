@@ -2,7 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
-  static const String home = "/";
+  static const String home = "";
   static const String post = "post";
   static const String style = "style";
 
