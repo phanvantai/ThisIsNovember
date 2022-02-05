@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:this_is_november_blog/constants/spacing.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
 
 class TagWrapper extends StatelessWidget {
   final List<Tag> tags;

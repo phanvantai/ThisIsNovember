@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class PostModel {
   final String id;
   final String title;
@@ -8,6 +6,7 @@ class PostModel {
   final String date;
   final List<String>? tags;
   final String content;
+  final String category;
   String? nextPost;
   String? previousPost;
 
@@ -16,6 +15,7 @@ class PostModel {
     required this.title,
     required this.date,
     required this.content,
+    required this.category,
     this.image,
     this.description,
     this.tags,

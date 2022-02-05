@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:this_is_november_blog/constants/spacing.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 
 class TextBody extends StatelessWidget {

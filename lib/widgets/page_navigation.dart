@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:this_is_november_blog/constants/color.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 import 'package:this_is_november_blog/models/page.dart';
 
@@ -15,10 +15,10 @@ class PagesNavigation extends StatelessWidget {
         //if (model.next != null)
         Row(
           children: <Widget>[
-            Icon(
+            const Icon(
               Icons.keyboard_arrow_left,
               size: 25,
-              color: textSecondary,
+              color: kSecondaryColorText,
             ),
             Text("NEWER POSTS", style: buttonTextStyle),
           ],
@@ -28,10 +28,10 @@ class PagesNavigation extends StatelessWidget {
         Row(
           children: <Widget>[
             Text("OLDER POSTS", style: buttonTextStyle),
-            Icon(
+            const Icon(
               Icons.keyboard_arrow_right,
               size: 25,
-              color: textSecondary,
+              color: kSecondaryColorText,
             ),
           ],
         )

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
+import 'package:this_is_november_blog/helpers/reponsive.dart';
 import 'package:this_is_november_blog/models/page.dart';
-import 'package:this_is_november_blog/pages/home/post_item.dart';
+import 'package:this_is_november_blog/pages/home/components/post_card.dart';
+import 'package:this_is_november_blog/widgets/categories.dart';
 import 'package:this_is_november_blog/widgets/divider.dart';
-import 'package:this_is_november_blog/widgets/footer.dart';
-import 'package:this_is_november_blog/widgets/menu_bar.dart';
+import 'package:this_is_november_blog/widgets/other_posts.dart';
 import 'package:this_is_november_blog/widgets/page_navigation.dart';
+import 'package:this_is_november_blog/widgets/search.dart';
 
 class HomePage extends StatelessWidget {
   final PageModel model;
@@ -13,32 +16,45 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.symmetric(horizontal: 32),
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Expanded(
+          flex: 5,
           child: Column(
-            children: <Widget>[
-              const MenuBar(),
-              ...model.list.map((e) {
-                return Column(children: [
-                  PostItemView(e),
-                  divider,
-                ]);
-              }).toList(),
+            children: [
+              ...List.generate(
+                PageModel.sample.length,
+                (index) => PostCard(model: PageModel.sample[index]),
+              ),
               if (model.next == null || model.previous == null) ...[
                 Container(
-                  padding: const EdgeInsets.symmetric(vertical: 80),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: kDefaultPadding),
                   child: PagesNavigation(model),
                 ),
                 divider,
               ],
-              const Footer(),
             ],
           ),
         ),
-      ),
-      backgroundColor: Colors.white,
+        if (Responsive.isDesktop(context))
+          const SizedBox(width: kDefaultPadding / 2),
+        //Sidebar
+        if (Responsive.isDesktop(context))
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: const [
+                Search(),
+                SizedBox(height: kDefaultPadding),
+                Categories(),
+                SizedBox(height: kDefaultPadding),
+                OtherPosts(),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

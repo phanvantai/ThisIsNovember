@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:this_is_november_blog/constants/spacing.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 import 'package:this_is_november_blog/models/post.dart';
+import 'package:this_is_november_blog/widgets/header.dart';
 import 'package:this_is_november_blog/pages/post/author.dart';
 import 'package:this_is_november_blog/widgets/divider.dart';
 import 'package:this_is_november_blog/widgets/footer.dart';
 import 'package:this_is_november_blog/widgets/image_wrapper.dart';
-import 'package:this_is_november_blog/widgets/menu_bar.dart';
 import 'package:this_is_november_blog/widgets/post_navigation.dart';
 import 'package:this_is_november_blog/widgets/tag.dart';
 import 'package:this_is_november_blog/widgets/text.dart';
@@ -31,7 +31,7 @@ class PostView extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: <Widget>[
-            const MenuBar(),
+            const Header(),
             if (model.image != null)
               ImageWrapper(
                 image: model.image!,

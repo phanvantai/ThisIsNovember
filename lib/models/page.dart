@@ -20,6 +20,7 @@ class PageModel {
     PostModel(
         title: listItemTitleText,
         content: 'assets/posts/1.md',
+        category: 'Technology',
         id: '1',
         date: '23 September 2020',
         description: listItemPreviewText,
@@ -27,6 +28,7 @@ class PageModel {
     PostModel(
         date: '21 August  2020',
         content: 'assets/posts/1.md',
+        category: 'Books',
         id: '2',
         title: listItemTitleText,
         description: listItemPreviewText,
@@ -34,6 +36,7 @@ class PageModel {
     PostModel(
         date: '23 September 2020',
         content: 'assets/posts/1.md',
+        category: 'Films',
         id: '3',
         title: listItemTitleText,
         description: listItemPreviewText,

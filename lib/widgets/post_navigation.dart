@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:this_is_november_blog/constants/color.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 
 class PostNavigation extends StatelessWidget {
@@ -12,22 +12,22 @@ class PostNavigation extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Widget>[
-            Icon(
+            const Icon(
               Icons.keyboard_arrow_left,
               size: 25,
-              color: textSecondary,
+              color: kSecondaryColorText,
             ),
             Text("PREVIOUS POST", style: buttonTextStyle),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Row(
           children: <Widget>[
             Text("NEXT POST", style: buttonTextStyle),
-            Icon(
+            const Icon(
               Icons.keyboard_arrow_right,
               size: 25,
-              color: textSecondary,
+              color: kSecondaryColorText,
             ),
           ],
         )

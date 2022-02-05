@@ -1,24 +1,26 @@
 // Simple
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:this_is_november_blog/constants/color.dart';
+import 'package:this_is_november_blog/constants/constants.dart';
 
 TextStyle headlineTextStyle = GoogleFonts.montserrat(
-    textStyle: TextStyle(
+    textStyle: const TextStyle(
         fontSize: 26,
-        color: textPrimary,
+        color: kPrimaryColorText,
         letterSpacing: 1.5,
         fontWeight: FontWeight.w300));
 
 TextStyle headlineSecondaryTextStyle = GoogleFonts.montserrat(
-    textStyle: TextStyle(
-        fontSize: 20, color: textPrimary, fontWeight: FontWeight.w300));
+    textStyle: const TextStyle(
+        fontSize: 20, color: kPrimaryColorText, fontWeight: FontWeight.w300));
 
 TextStyle subtitleTextStyle = GoogleFonts.openSans(
-    textStyle: TextStyle(fontSize: 14, color: textSecondary, letterSpacing: 1));
+    textStyle: const TextStyle(
+        fontSize: 14, color: kSecondaryColorText, letterSpacing: 1));
 
 TextStyle bodyTextStyle = GoogleFonts.openSans(
-    textStyle: TextStyle(fontSize: 14, color: textPrimary));
+    textStyle: const TextStyle(fontSize: 14, color: kPrimaryColorText));
 
 TextStyle buttonTextStyle = GoogleFonts.montserrat(
-    textStyle: TextStyle(fontSize: 14, color: textPrimary, letterSpacing: 1));
+    textStyle: const TextStyle(
+        fontSize: 14, color: kPrimaryColorText, letterSpacing: 1));
