@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/models/page.dart';
-import 'package:this_is_november_blog/pages/main_screen.dart';
+import 'package:this_is_november_blog/pages/home/home_view.dart';
 import 'package:this_is_november_blog/pages/post/post_view.dart';
 import 'package:this_is_november_blog/routing/routes.dart';
 
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         return Routes.fadeThrough(settings, (context) {
           switch (settings.name) {
             case Routes.home:
-              return MainScreen();
+              return HomeView();
             case Routes.post:
               return PostView(PageModel.sample.last);
             case Routes.style:

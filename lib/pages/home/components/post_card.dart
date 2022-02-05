@@ -64,7 +64,9 @@ class PostCard extends StatelessWidget {
           Container(
             margin: marginBottom24,
             child: ReadMoreButton(
-              onPressed: () => Navigator.pushNamed(context, Routes.post),
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.post);
+              },
             ),
           ),
           divider,

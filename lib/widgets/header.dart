@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
-import 'package:this_is_november_blog/widgets/navigation_bar.dart';
+import 'package:this_is_november_blog/widgets/menu_bar.dart';
 import 'package:this_is_november_blog/widgets/divider.dart';
 
 class Header extends StatelessWidget {

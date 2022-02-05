@@ -4,10 +4,10 @@ import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 
-class WebMenu extends StatelessWidget {
+class MenuList extends StatelessWidget {
   final MenuController _controller = Get.put(MenuController());
 
-  WebMenu({Key? key}) : super(key: key);
+  MenuList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class WebMenu extends StatelessWidget {
       () => Row(
         children: List.generate(
           _controller.menuItems.length,
-          (index) => WebMenuItem(
+          (index) => MenuItem(
             text: _controller.menuItems[index],
             isActive: index == _controller.selectedIndex,
             press: () => _controller.setMenuIndex(index),
@@ -26,8 +26,8 @@ class WebMenu extends StatelessWidget {
   }
 }
 
-class WebMenuItem extends StatefulWidget {
-  const WebMenuItem({
+class MenuItem extends StatefulWidget {
+  const MenuItem({
     Key? key,
     required this.isActive,
     required this.text,
@@ -39,10 +39,10 @@ class WebMenuItem extends StatefulWidget {
   final VoidCallback press;
 
   @override
-  _WebMenuItemState createState() => _WebMenuItemState();
+  _MenuItemState createState() => _MenuItemState();
 }
 
-class _WebMenuItemState extends State<WebMenuItem> {
+class _MenuItemState extends State<MenuItem> {
   bool _isHover = false;
 
   Color _borderColor() {

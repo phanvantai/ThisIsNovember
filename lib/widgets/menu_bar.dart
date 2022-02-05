@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 import 'package:this_is_november_blog/helpers/reponsive.dart';
-import 'package:this_is_november_blog/widgets/web_menu.dart';
+import 'package:this_is_november_blog/widgets/menu_list.dart';
 
 class MenuBar extends StatelessWidget {
   final MenuController _controller = Get.put(MenuController());
@@ -28,7 +28,7 @@ class MenuBar extends StatelessWidget {
                     fontWeight: FontWeight.w500)),
           ),
           const Spacer(),
-          if (Responsive.isDesktop(context)) WebMenu(),
+          if (Responsive.isDesktop(context)) MenuList(),
           if (!Responsive.isDesktop(context)) const Spacer(),
           if (!Responsive.isDesktop(context))
             IconButton(

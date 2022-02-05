@@ -9,10 +9,10 @@ import 'package:this_is_november_blog/widgets/other_posts.dart';
 import 'package:this_is_november_blog/widgets/page_navigation.dart';
 import 'package:this_is_november_blog/widgets/search.dart';
 
-class HomePage extends StatelessWidget {
+class HomeBody extends StatelessWidget {
   final PageModel model;
 
-  const HomePage(this.model, {Key? key}) : super(key: key);
+  const HomeBody(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
