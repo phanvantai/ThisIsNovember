@@ -7,7 +7,7 @@ class MenuController extends GetxController {
 
   int get selectedIndex => _selectedIndex.value;
   List<String> get menuItems =>
-      ["HOME", "TECHS", "BOOKS", "FILMS", "ABOUT", "CONTACT"];
+      ["HOME" /*, "TECHS", "BOOKS", "FILMS", "ABOUT", "CONTACT"*/];
   void addScaffoldKey(GlobalKey<ScaffoldState> key) {
     _scaffoldKey.add(key);
   }
