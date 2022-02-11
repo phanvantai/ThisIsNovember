@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
+import 'package:this_is_november_blog/controllers/menu_controller.dart';
+import 'package:this_is_november_blog/controllers/navigation_controller.dart';
 import 'package:this_is_november_blog/models/page.dart';
 import 'package:this_is_november_blog/pages/home/home_view.dart';
 import 'package:this_is_november_blog/pages/post/post_view.dart';
 import 'package:this_is_november_blog/routing/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  Get.put(MenuController());
+  Get.put(NavigationController());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
