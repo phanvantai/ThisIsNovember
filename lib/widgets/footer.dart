@@ -10,7 +10,7 @@ class Footer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 40),
       child: Align(
         alignment: Alignment.center,
-        child: TextBody(text: "© ${currentYear()} by november 2nd"),
+        child: TextBody(text: "© ${currentYear()} by november"),
       ),
     );
   }
