@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:provider/src/provider.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 
 class SideMenu extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
-
   SideMenu({Key? key}) : super(key: key);
 
   @override
@@ -13,36 +11,22 @@ class SideMenu extends StatelessWidget {
     return Drawer(
       child: Container(
         color: Colors.white,
-        child: Obx(
-          () => ListView(
-            children: [
-              DrawerHeader(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: kDefaultPadding),
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.close,
-                      color: Colors.black,
-                    ),
-                    onPressed: () {
-                      _controller.closeEndDrawer();
-                    },
-                  ),
-                ),
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Container(),
+            ),
+            ...List.generate(
+              context.read<MenuController>().menuItems.length,
+              (index) => DrawerItem(
+                isActive: index == context.read<MenuController>().selectedIndex,
+                title: context.read<MenuController>().menuItems[index],
+                press: () {
+                  context.read<MenuController>().setMenuIndex(index);
+                },
               ),
-              ...List.generate(
-                _controller.menuItems.length,
-                (index) => DrawerItem(
-                  isActive: index == _controller.selectedIndex,
-                  title: _controller.menuItems[index],
-                  press: () {
-                    _controller.setMenuIndex(index);
-                  },
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

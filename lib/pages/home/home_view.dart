@@ -1,40 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import 'package:this_is_november_blog/constants/constants.dart';
-import 'package:this_is_november_blog/controllers/menu_controller.dart';
+import 'package:this_is_november_blog/helpers/reponsive.dart';
 import 'package:this_is_november_blog/models/page.dart';
-import 'package:this_is_november_blog/pages/home/home_body.dart';
-import 'package:this_is_november_blog/widgets/footer.dart';
-import 'package:this_is_november_blog/widgets/header.dart';
-import 'package:this_is_november_blog/widgets/side_menu.dart';
+import 'package:this_is_november_blog/pages/home/components/post_card.dart';
+import 'package:this_is_november_blog/widgets/categories.dart';
+import 'package:this_is_november_blog/widgets/divider.dart';
+import 'package:this_is_november_blog/widgets/other_posts.dart';
+import 'package:this_is_november_blog/widgets/page_navigation.dart';
+import 'package:this_is_november_blog/widgets/search.dart';
 
 class HomeView extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
-  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
+  final PageModel model;
 
-  HomeView({Key? key}) : super(key: key);
+  HomeView(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    _controller.addScaffoldKey(_key);
-    return Scaffold(
-      key: _key,
-      endDrawer: SideMenu(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const Header(),
-            Container(
-              padding: const EdgeInsets.all(kDefaultPadding),
-              constraints: const BoxConstraints(maxWidth: kMaxWidth),
-              child: SafeArea(
-                child: HomeBody(PageModel(0, PageModel.sample)),
+    return SingleChildScrollView(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 5,
+            child: Column(
+              children: [
+                ...List.generate(
+                  PageModel.sample.length,
+                  (index) => PostCard(model: PageModel.sample[index]),
+                ),
+                if (model.next == null || model.previous == null) ...[
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: kDefaultPadding),
+                    child: PagesNavigation(model),
+                  ),
+                  divider,
+                ],
+              ],
+            ),
+          ),
+          if (Responsive.isDesktop(context))
+            const SizedBox(width: kDefaultPadding / 2),
+          //Sidebar
+          if (Responsive.isDesktop(context))
+            Expanded(
+              flex: 2,
+              child: Column(
+                children: const [
+                  Search(),
+                  SizedBox(height: kDefaultPadding),
+                  Categories(),
+                  SizedBox(height: kDefaultPadding),
+                  OtherPosts(),
+                ],
               ),
             ),
-            const Footer(),
-          ],
-        ),
+        ],
       ),
     );
   }

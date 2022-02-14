@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:provider/src/provider.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 
 class MenuList extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
-
   MenuList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Row(
-        children: List.generate(
-          _controller.menuItems.length,
-          (index) => MenuItem(
-            text: _controller.menuItems[index],
-            isActive: index == _controller.selectedIndex,
-            press: () => _controller.setMenuIndex(index),
-          ),
+    return Row(
+      children: List.generate(
+        context.read<MenuController>().menuItems.length,
+        (index) => MenuItem(
+          text: context.read<MenuController>().menuItems[index],
+          isActive: index == context.read<MenuController>().selectedIndex,
+          press: () => context.read<MenuController>().setMenuIndex(index),
         ),
       ),
     );

@@ -12,19 +12,14 @@ class Header extends StatelessWidget {
       width: double.infinity,
       color: Colors.white,
       child: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              constraints: const BoxConstraints(maxWidth: kMaxWidth),
-              padding: const EdgeInsets.all(kDefaultPadding),
-              child: Column(
-                children: [
-                  MenuBar(),
-                  divider,
-                ],
-              ),
-            )
-          ],
+        child: Container(
+          padding: const EdgeInsets.all(kDefaultPadding),
+          child: Column(
+            children: [
+              MenuBar(),
+              divider,
+            ],
+          ),
         ),
       ),
     );

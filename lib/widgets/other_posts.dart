@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
+import 'package:this_is_november_blog/constants/typography.dart';
 import 'package:this_is_november_blog/widgets/sidebar_container.dart';
 
 class OtherPosts extends StatelessWidget {
@@ -59,12 +60,7 @@ class RecentPostCard extends StatelessWidget {
               child: Text(
                 title,
                 maxLines: 2,
-                style: const TextStyle(
-                  fontFamily: "Raleway",
-                  color: kPrimaryColorText,
-                  fontWeight: FontWeight.bold,
-                  height: 1.5,
-                ),
+                style: buttonTextStyle,
               ),
             ),
           ],

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/src/provider.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 import 'package:this_is_november_blog/helpers/reponsive.dart';
 import 'package:this_is_november_blog/widgets/menu_list.dart';
 
 class MenuBar extends StatelessWidget {
-  final MenuController _controller = Get.put(MenuController());
-
   MenuBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: marginBottom24,
+      //margin: marginBottom12,
       child: Row(
         children: [
           GestureDetector(
@@ -36,9 +34,7 @@ class MenuBar extends StatelessWidget {
                 Icons.menu,
                 color: Colors.black,
               ),
-              onPressed: () {
-                _controller.openOrCloseDrawer();
-              },
+              onPressed: context.read<MenuController>().controlMenu,
             ),
         ],
       ),

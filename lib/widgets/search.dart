@@ -18,7 +18,10 @@ class Search extends StatelessWidget {
           hintText: "Type Here ...",
           suffixIcon: Padding(
             padding: const EdgeInsets.all(kDefaultPadding / 2),
-            child: SvgPicture.asset("assets/icons/feather_search.svg"),
+            child: Icon(
+              Icons.search,
+              color: Colors.black,
+            ),
           ),
           // border: const OutlineInputBorder(
           //   borderRadius: BorderRadius.all(

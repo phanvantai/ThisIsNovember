@@ -1,35 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class MenuController extends GetxController {
-  static MenuController instance = Get.find();
-  final RxInt _selectedIndex = 0.obs;
-  List<GlobalKey<ScaffoldState>> _scaffoldKey = [];
-
-  int get selectedIndex => _selectedIndex.value;
+class MenuController extends ChangeNotifier {
   List<String> get menuItems =>
       ["HOME" /*, "TECHS", "BOOKS", "FILMS", "ABOUT", "CONTACT"*/];
-  void addScaffoldKey(GlobalKey<ScaffoldState> key) {
-    _scaffoldKey.add(key);
-  }
+  int _selectedIndex = 0;
 
-  void openOrCloseDrawer() {
-    for (var element in _scaffoldKey) {
-      if (element.currentState?.isDrawerOpen != true) {
-        element.currentState?.openEndDrawer();
-      } else {
-        element.currentState?.openDrawer();
-      }
-    }
-  }
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  void closeEndDrawer() {
-    for (var element in _scaffoldKey) {
-      element.currentState?.openDrawer();
+  GlobalKey<ScaffoldState> get scaffoldKey => _scaffoldKey;
+
+  int get selectedIndex => _selectedIndex;
+
+  void controlMenu() {
+    if (_scaffoldKey.currentState?.isEndDrawerOpen != true) {
+      _scaffoldKey.currentState?.openEndDrawer();
     }
   }
 
   void setMenuIndex(int index) {
-    _selectedIndex.value = index;
+    _selectedIndex = index;
   }
 }
