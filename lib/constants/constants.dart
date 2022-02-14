@@ -4,7 +4,7 @@ const kPrimaryColor = Colors.black;
 const kPrimaryColorText = Color(0xFF111111);
 const kSecondaryColorText = Color(0xFF3A3A3A);
 
-const kDefaultPadding = 24.0;
+const kDefaultPadding = 12.0;
 const kMaxWidth = 1232.0;
 const kDefaultDuration = Duration(milliseconds: 250);
 

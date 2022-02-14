@@ -13,7 +13,10 @@ class Header extends StatelessWidget {
       color: Colors.white,
       child: SafeArea(
         child: Container(
-          padding: const EdgeInsets.all(kDefaultPadding),
+          padding: const EdgeInsets.only(
+              top: kDefaultPadding,
+              left: kDefaultPadding,
+              right: kDefaultPadding),
           child: Column(
             children: [
               MenuBar(),

@@ -22,8 +22,8 @@ class MainPage extends StatelessWidget {
       appBar: PreferredSize(
         child: const Header(),
         preferredSize: Responsive.isDesktop(context)
-            ? const Size.fromHeight(101)
-            : const Size.fromHeight(104),
+            ? const Size.fromHeight(68)
+            : const Size.fromHeight(68),
       ),
       // push to other
       // _navigatorKey.currentState.pushNamed('/yourRouteName');
