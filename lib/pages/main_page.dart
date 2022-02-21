@@ -29,16 +29,14 @@ class MainPage extends StatelessWidget {
       // _navigatorKey.currentState.pushNamed('/yourRouteName');
       body: Navigator(
         key: _navigatorKey,
-        initialRoute: Routes.home,
+        initialRoute: Routes.homeRoute,
         onGenerateRoute: (settings) {
           return Routes.fadeThrough(settings, (context) {
             switch (settings.name) {
-              case Routes.home:
+              case Routes.homeRoute:
                 return HomeView(PageModel(0, PageModel.sample));
-              case Routes.post:
+              case Routes.postRoute:
                 return PostView(PageModel.sample.last);
-              case Routes.style:
-                return const SizedBox.shrink(); //TypographyPage();
               default:
                 return const SizedBox.shrink();
             }
