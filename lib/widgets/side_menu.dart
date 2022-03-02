@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 
 class SideMenu extends StatelessWidget {
-  SideMenu({Key? key}) : super(key: key);
+  const SideMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final menuController = context.watch<MenuController>();
     return Drawer(
       child: Container(
         color: Colors.white,
@@ -17,12 +18,12 @@ class SideMenu extends StatelessWidget {
               child: Container(),
             ),
             ...List.generate(
-              context.read<MenuController>().menuItems.length,
+              menuController.menuItems.length,
               (index) => DrawerItem(
-                isActive: index == context.read<MenuController>().selectedIndex,
-                title: context.read<MenuController>().menuItems[index],
+                isActive: index == menuController.selectedIndex,
+                title: menuController.menuItems[index],
                 press: () {
-                  context.read<MenuController>().setMenuIndex(index);
+                  menuController.setMenuIndex(index);
                 },
               ),
             ),
@@ -55,7 +56,10 @@ class DrawerItem extends StatelessWidget {
         onTap: press,
         title: Text(
           title,
-          style: TextStyle(color: isActive ? kPrimaryColorText : Colors.grey),
+          style: TextStyle(
+            color: isActive ? kPrimaryColorText : Colors.grey,
+            fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+          ),
         ),
       ),
     );

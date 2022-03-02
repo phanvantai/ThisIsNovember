@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 import 'package:this_is_november_blog/helpers/reponsive.dart';
 import 'package:this_is_november_blog/models/page.dart';
@@ -17,7 +17,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: context.read<MenuController>().scaffoldKey,
-      endDrawer: SideMenu(),
+      endDrawer: const SideMenu(),
       //extendBodyBehindAppBar: true,
       appBar: PreferredSize(
         child: const Header(),

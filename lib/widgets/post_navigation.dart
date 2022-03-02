@@ -3,6 +3,8 @@ import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 
 class PostNavigation extends StatelessWidget {
+  const PostNavigation({Key? key}) : super(key: key);
+
   // TODO Get PostID from Global Routing Singleton.
   // Example: String currentPage = RouteController.of(context).currentPage;
   @override

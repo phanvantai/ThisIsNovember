@@ -18,7 +18,7 @@ import 'package:this_is_november_blog/widgets/text.dart';
 
 class PostView extends StatelessWidget {
   final PostModel model;
-  PostView(this.model, {Key? key}) : super(key: key);
+  const PostView(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class PostView extends StatelessWidget {
                 Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: kDefaultPadding),
-                  child: PostNavigation(),
+                  child: const PostNavigation(),
                 ),
                 divider,
               ],

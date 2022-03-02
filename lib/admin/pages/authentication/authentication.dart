@@ -65,7 +65,7 @@ class AuthenticationPage extends StatelessWidget {
               const SizedBox(height: 15),
               InkWell(
                 onTap: () {
-                  print('taipv onTap something');
+                  debugPrint('taipv onTap something');
                 },
                 child: Container(
                   decoration: BoxDecoration(

@@ -4,6 +4,8 @@ import 'package:this_is_november_blog/admin/widgets/custom_text.dart';
 import 'package:this_is_november_blog/helpers/reponsive.dart';
 
 class OverviewPage extends StatelessWidget {
+  const OverviewPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,7 +24,7 @@ class OverviewPage extends StatelessWidget {
         ),
         Expanded(
             child: ListView(
-          children: [
+          children: const [
             // if (ResponsiveWidget.isLargeScreen(context) ||
             //     ResponsiveWidget.isMediumScreen(context))
             //   if (ResponsiveWidget.isCustomSize(context))

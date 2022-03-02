@@ -37,34 +37,32 @@ class VertticalMenuItem extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: AdminMenuController().returnIconFor(itemName),
-                    ),
-                    if (!AdminMenuController().isActive(itemName))
-                      Flexible(
-                        child: CustomText(
-                          text: itemName,
-                          color: AdminMenuController().isHovering(itemName)
-                              ? Colors.white
-                              : lightGrey,
-                        ),
-                      )
-                    else
-                      Flexible(
-                        child: CustomText(
-                          text: itemName,
-                          color: Colors.white,
-                          size: 18,
-                          weight: FontWeight.bold,
-                        ),
-                      )
-                  ],
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: AdminMenuController().returnIconFor(itemName),
+                  ),
+                  if (!AdminMenuController().isActive(itemName))
+                    Flexible(
+                      child: CustomText(
+                        text: itemName,
+                        color: AdminMenuController().isHovering(itemName)
+                            ? Colors.white
+                            : lightGrey,
+                      ),
+                    )
+                  else
+                    Flexible(
+                      child: CustomText(
+                        text: itemName,
+                        color: Colors.white,
+                        size: 18,
+                        weight: FontWeight.bold,
+                      ),
+                    )
+                ],
               ),
             ),
           ],

@@ -13,7 +13,7 @@ import 'package:this_is_november_blog/widgets/search.dart';
 class HomeView extends StatelessWidget {
   final PageModel model;
 
-  HomeView(this.model, {Key? key}) : super(key: key);
+  const HomeView(this.model, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

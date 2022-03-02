@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:this_is_november_blog/admin/widgets/custom_text.dart';
 
 class PageNotFound extends StatelessWidget {
+  const PageNotFound({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

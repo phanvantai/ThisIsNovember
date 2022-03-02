@@ -5,13 +5,13 @@ import 'package:this_is_november_blog/routing/routes.dart';
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case Routes.overviewPageRoute:
-      return _getPageRoute(OverviewPage());
+      return _getPageRoute(const OverviewPage());
     case Routes.driversPageRoute:
-      return _getPageRoute(OverviewPage());
+      return _getPageRoute(const OverviewPage());
     case Routes.clientsPageRoute:
-      return _getPageRoute(OverviewPage());
+      return _getPageRoute(const OverviewPage());
     default:
-      return _getPageRoute(OverviewPage());
+      return _getPageRoute(const OverviewPage());
   }
 }
 

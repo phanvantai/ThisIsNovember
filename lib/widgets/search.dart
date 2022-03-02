@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/widgets/sidebar_container.dart';
 
@@ -14,10 +13,10 @@ class Search extends StatelessWidget {
       title: "Search",
       child: TextField(
         onChanged: (value) {},
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           hintText: "Type Here ...",
           suffixIcon: Padding(
-            padding: const EdgeInsets.all(kDefaultPadding / 2),
+            padding: EdgeInsets.all(kDefaultPadding / 2),
             child: Icon(
               Icons.search,
               color: Colors.black,

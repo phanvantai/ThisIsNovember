@@ -5,10 +5,12 @@ import 'package:this_is_november_blog/admin/pages/authentication/authentication.
 import 'package:this_is_november_blog/admin/pages/overview/overview.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
+import 'package:this_is_november_blog/helpers/utils.dart';
 import 'package:this_is_november_blog/pages/main_page.dart';
 import 'package:this_is_november_blog/routing/routes.dart';
 
 void main() {
+  configureApp();
   runApp(const MyApp());
 }
 
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
         initialRoute: Routes.homeRoute,
         onUnknownRoute: (settings) {
           return Routes.fadeThrough(settings, (context) {
-            return PageNotFound();
+            return const PageNotFound();
           });
         },
         onGenerateRoute: (settings) {
@@ -50,7 +52,7 @@ class MyApp extends StatelessWidget {
               case Routes.homeRoute:
                 return MainPage();
               case Routes.adminRoute:
-                return OverviewPage();
+                return const OverviewPage();
               case Routes.authenticationPageRoute:
                 return const AuthenticationPage();
               default:

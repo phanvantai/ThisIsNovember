@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:provider/src/provider.dart';
+import 'package:provider/provider.dart';
 import 'package:this_is_november_blog/constants/constants.dart';
 import 'package:this_is_november_blog/constants/typography.dart';
 import 'package:this_is_november_blog/controllers/menu_controller.dart';
 
 class MenuList extends StatelessWidget {
-  MenuList({Key? key}) : super(key: key);
+  const MenuList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final menuController = context.watch<MenuController>();
     return Row(
       children: List.generate(
-        context.read<MenuController>().menuItems.length,
+        menuController.menuItems.length,
         (index) => MenuItem(
-          text: context.read<MenuController>().menuItems[index],
-          isActive: index == context.read<MenuController>().selectedIndex,
-          press: () => context.read<MenuController>().setMenuIndex(index),
+          text: menuController.menuItems[index],
+          isActive: index == menuController.selectedIndex,
+          press: () => menuController.setMenuIndex(index),
         ),
       ),
     );
@@ -61,8 +62,8 @@ class _MenuItemState extends State<MenuItem> {
       },
       child: AnimatedContainer(
         duration: kDefaultDuration,
-        margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding / 2),
-        padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
+        margin: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+        padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(color: _borderColor(), width: 3),

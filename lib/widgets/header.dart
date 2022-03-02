@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
               left: kDefaultPadding,
               right: kDefaultPadding),
           child: Column(
-            children: [
+            children: const [
               MenuBar(),
               divider,
             ],

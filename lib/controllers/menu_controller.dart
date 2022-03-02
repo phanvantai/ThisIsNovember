@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MenuController extends ChangeNotifier {
-  List<String> get menuItems =>
-      ["HOME" /*, "TECHS", "BOOKS", "FILMS", "ABOUT", "CONTACT"*/];
+  List<String> get menuItems => ["TECHS", "BOOKS", "FILMS"];
   int _selectedIndex = 0;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -19,5 +18,6 @@ class MenuController extends ChangeNotifier {
 
   void setMenuIndex(int index) {
     _selectedIndex = index;
+    notifyListeners();
   }
 }
