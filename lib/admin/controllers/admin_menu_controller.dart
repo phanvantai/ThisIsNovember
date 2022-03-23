@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:this_is_november_blog/admin/constants/constants.dart';
-import 'package:this_is_november_blog/routing/routes.dart';
+import 'package:this_is_november_blog/core/routing/routes.dart';
 
 class AdminMenuController extends ChangeNotifier {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

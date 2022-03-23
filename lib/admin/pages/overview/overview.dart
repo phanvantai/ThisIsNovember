@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:this_is_november_blog/admin/controllers/admin_menu_controller.dart';
 import 'package:this_is_november_blog/admin/widgets/custom_text.dart';
-import 'package:this_is_november_blog/helpers/reponsive.dart';
+import 'package:this_is_november_blog/core/helpers/reponsive.dart';
 
 class OverviewPage extends StatelessWidget {
   const OverviewPage({Key? key}) : super(key: key);

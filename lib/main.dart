@@ -3,11 +3,11 @@ import 'package:provider/provider.dart';
 import 'package:this_is_november_blog/admin/pages/404/page_not_found.dart';
 import 'package:this_is_november_blog/admin/pages/authentication/authentication.dart';
 import 'package:this_is_november_blog/admin/pages/overview/overview.dart';
-import 'package:this_is_november_blog/constants/constants.dart';
-import 'package:this_is_november_blog/controllers/menu_controller.dart';
-import 'package:this_is_november_blog/helpers/utils.dart';
-import 'package:this_is_november_blog/pages/main_page.dart';
-import 'package:this_is_november_blog/routing/routes.dart';
+import 'package:this_is_november_blog/core/constants/constants.dart';
+import 'package:this_is_november_blog/core/helpers/utils.dart';
+import 'package:this_is_november_blog/core/routing/routes.dart';
+import 'package:this_is_november_blog/web/controllers/menu_controller.dart';
+import 'package:this_is_november_blog/web/pages/main_page.dart';
 
 void main() {
   configureApp();
