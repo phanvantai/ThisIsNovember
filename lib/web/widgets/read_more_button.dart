@@ -15,12 +15,12 @@ class ReadMoreButton extends StatelessWidget {
       return MouseRegion(
         onHover: (event) => setState(() => hover = true),
         onExit: (event) => setState(() => hover = false),
-        child: OutlineButton(
+        child: ElevatedButton(
           onPressed: onPressed as void Function()?,
-          highlightedBorderColor: kPrimaryColorText,
-          hoverColor: kPrimaryColorText,
-          borderSide: const BorderSide(color: kPrimaryColorText, width: 2),
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          //highlightedBorderColor: kPrimaryColorText,
+          //hoverColor: kPrimaryColorText,
+          //borderSide: const BorderSide(color: kPrimaryColorText, width: 2),
+          // padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Text(
             "READ MORE",
             style: GoogleFonts.montserrat(

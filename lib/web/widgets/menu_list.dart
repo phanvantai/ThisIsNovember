@@ -36,7 +36,7 @@ class MenuItem extends StatefulWidget {
   final VoidCallback press;
 
   @override
-  _MenuItemState createState() => _MenuItemState();
+  State<MenuItem> createState() => _MenuItemState();
 }
 
 class _MenuItemState extends State<MenuItem> {

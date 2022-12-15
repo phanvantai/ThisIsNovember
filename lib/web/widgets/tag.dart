@@ -28,10 +28,6 @@ class Tag extends StatelessWidget {
   Widget build(BuildContext context) {
     return RawMaterialButton(
       onPressed: () {},
-      child: Text(
-        tag,
-        style: GoogleFonts.openSans(color: Colors.white, fontSize: 14),
-      ),
       fillColor: const Color(0xFF242424),
       padding: const EdgeInsets.symmetric(horizontal: 16),
       elevation: 0,
@@ -39,6 +35,10 @@ class Tag extends StatelessWidget {
       hoverColor: const Color(0xFFC7C7C7),
       highlightElevation: 0,
       focusElevation: 0,
+      child: Text(
+        tag,
+        style: GoogleFonts.openSans(color: Colors.white, fontSize: 14),
+      ),
     );
   }
 }

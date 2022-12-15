@@ -20,10 +20,10 @@ class MainPage extends StatelessWidget {
       endDrawer: const SideMenu(),
       //extendBodyBehindAppBar: true,
       appBar: PreferredSize(
-        child: const Header(),
         preferredSize: Responsive.isDesktop(context)
             ? const Size.fromHeight(68)
             : const Size.fromHeight(68),
+        child: const Header(),
       ),
       // push to other
       // _navigatorKey.currentState.pushNamed('/yourRouteName');
